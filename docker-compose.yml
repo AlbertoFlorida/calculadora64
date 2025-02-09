@@ -1,0 +1,6 @@
+version: 'V1'
+services:
+  calculadora:
+    image: alberto1500/calculadora_t5.3:V1
+    ports:
+      - "8080:80"
