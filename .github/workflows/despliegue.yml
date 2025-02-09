@@ -22,13 +22,13 @@ jobs:
           docker build -t ${{ secrets.DOCKER_USERNAME }}/calculadora64:V1 .
           docker push ${{ secrets.DOCKER_USERNAME }}/calculadora64:V1
       # Transferir el archivo compose.yml al servidor remoto
-      - name: Transfer compose.yml to remote server
+      - name: Transfer docker-composer.yml to remote server
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: ./compose.yml
+          source: ./docker-composer.yml
           target: ~/deploy/
       # Desplegar la aplicación en el servidor remoto usando docker-compose
       - name: Deploy with Docker Compose
