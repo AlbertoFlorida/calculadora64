@@ -1,6 +1,6 @@
-version: 'V1'
+version: '1'
 services:
   calculadora:
-    image: alberto1500/calculadora_t5.3:V1
+    image: alberto1500/calculadora64:V1
     ports:
       - "8080:80"
